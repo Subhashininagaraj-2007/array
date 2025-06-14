@@ -1,0 +1,20 @@
+class Solution {
+    public void segregateElements(int[] arr) {
+     List<Integer> pos = new ArrayList<>();
+    List<Integer> neg = new ArrayList<>();
+    for (int num : arr) {
+        if (num < 0) {
+            neg.add(num);
+        } else {
+            pos.add(num);
+        }
+    }
+    int j = 0;
+    for (int num : pos) {
+        arr[j++] = num;
+    }
+    for (int num : neg) {
+        arr[j++] = num;
+    }
+    }
+}
