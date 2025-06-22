@@ -1,0 +1,34 @@
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+         int n = sc.nextInt();
+        int []nums=new int[n];
+       for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        int low = 0, high = n - 1;
+        int maxElement = nums[0];  
+        if (nums[low] < nums[high]) {
+            maxElement = nums[high];
+        } else {
+            while (low <= high) {
+                int mid = low + (high - low) / 2;
+
+                if (mid < n - 1 && nums[mid] > nums[mid + 1]) {
+                    maxElement = nums[mid];
+                    break;
+                }
+
+                if (nums[mid] >= nums[low]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        }
+
+        System.out.println( maxElement);
+    }
+}
