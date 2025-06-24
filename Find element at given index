@@ -1,0 +1,9 @@
+class Solution {
+    public static int findElementAtIndex(int key, int[] arr) {
+        if (key >= 0 && key < arr.length) {
+            return arr[key];
+        }
+        
+        return -1;
+    }
+}
